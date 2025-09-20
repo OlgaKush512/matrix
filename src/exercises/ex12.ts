@@ -223,6 +223,56 @@ export const ex12 = (): void => {
             console.log('Error:', error);
         }
     }
-    
+    console.log('\n=== Extra tests ===');
+
+    const testMatrices: number[][][] = [
+        [[1, 0], [0, 1]],        // Identity
+        [[2, 0], [0, 2]],        // Scaling
+        [[0.5, 0], [0, 0.5]],    // Scaling inverse
+        [[0, 1], [1, 0]],        // Swap
+        [[1, 2], [3, 4]],        // Generic 2x2
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]] // 3x3 Identity
+    ];
+
+    for (const arr of testMatrices) {
+        const matrix = new Matrix(arr);
+        console.log('Original matrix:'); matrix.print();
+
+        try {
+            const inv = inverse(matrix);
+            console.log('Inverse matrix:'); inv.print();
+        } catch (error) {
+            if (error instanceof Error) {
+                console.log('Error:', error.message);
+            } else {
+                console.log('Error:', error);
+            }
+        }
+
+        console.log('-------------------------');
+    }
+
+    // Test singular matrix
+    console.log('\n--- Singular matrix ---');
+    const singularity = new Matrix([[1, 2], [2, 4]]);
+    console.log('Original matrix:'); singularity.print();
+    try {
+        const inv = inverse(singularity);
+        console.log('Inverse matrix:'); inv.print();
+    } catch (error) {
+        if (error instanceof Error) console.log('Error:', error.message);
+    }
+
+    // Test non-square matrix
+    console.log('\n--- Non-square matrix ---');
+    const nonSquare = new Matrix([[1, 2], [3, 4], [5, 6]]);
+    console.log('Original matrix:'); nonSquare.print();
+    try {
+        const inv = inverse(nonSquare);
+        console.log('Inverse matrix:'); inv.print();
+    } catch (error) {
+        if (error instanceof Error) console.log('Error:', error.message);
+    }
+
     console.log('✓ Exercise 12 completed successfully');
 };

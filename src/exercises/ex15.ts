@@ -241,6 +241,87 @@ export const ex15 = (): void => {
         ComplexOps.mul(ComplexOps.conj(beta), beta)
     );
     console.log(`|α|² + |β|² = ${ComplexOps.toString(normSquared)}`);
-    
-    console.log('✓ Exercise 15 completed successfully');
+
+
+const testComplexNumbers = (): void => {
+    console.log("\n=== Test Complex Numbers ===");
+
+    const a = ComplexOps.create(3, 2);
+    const b = ComplexOps.create(1, 4);
+
+    console.log(`a = ${ComplexOps.toString(a)}`);
+    console.log(`b = ${ComplexOps.toString(b)}`);
+    console.log(`a + b = ${ComplexOps.toString(ComplexOps.add(a, b))}`);
+    console.log(`a - b = ${ComplexOps.toString(ComplexOps.sub(a, b))}`);
+    console.log(`a * b = ${ComplexOps.toString(ComplexOps.mul(a, b))}`);
+    console.log(`a / b = ${ComplexOps.toString(ComplexOps.div(a, b))}`);
+    console.log(`conj(a) = ${ComplexOps.toString(ComplexOps.conj(a))}`);
+    console.log(`|a| = ${ComplexOps.abs(a)}`);
+};
+
+const testComplexVectors = (): void => {
+    console.log("\n=== Test Complex Vectors ===");
+
+    const v1 = ComplexVector.create([
+        ComplexOps.create(1, 2),
+        ComplexOps.create(3, 4)
+    ]);
+
+    const v2 = ComplexVector.create([
+        ComplexOps.create(5, -1),
+        ComplexOps.create(-2, 3)
+    ]);
+
+    console.log("v1 =", v1.data.map(c => ComplexOps.toString(c)));
+    console.log("v2 =", v2.data.map(c => ComplexOps.toString(c)));
+
+    console.log("v1 + v2 =", ComplexVector.add(v1, v2).data.map(c => ComplexOps.toString(c)));
+    console.log("v1 - v2 =", ComplexVector.sub(v1, v2).data.map(c => ComplexOps.toString(c)));
+    console.log("2 * v1 (scaled) =", ComplexVector.scl(v1, ComplexOps.create(2, 0)).data.map(c => ComplexOps.toString(c)));
+    console.log("v1 · v2 =", ComplexOps.toString(ComplexVector.dot(v1, v2)));
+    console.log("|v1| =", ComplexVector.norm(v1));
+};
+
+const testComplexMatrices = (): void => {
+    console.log("\n=== Test Complex Matrices ===");
+
+    const A = ComplexMatrix.create([
+        [ComplexOps.create(1, 1), ComplexOps.create(2, -1)],
+        [ComplexOps.create(0, 3), ComplexOps.create(-1, 0)]
+    ]);
+
+    const B = ComplexMatrix.create([
+        [ComplexOps.create(2, 0), ComplexOps.create(0, 1)],
+        [ComplexOps.create(1, -1), ComplexOps.create(1, 2)]
+    ]);
+
+    console.log("Matrix A =", A.data.map(row => row.map(c => ComplexOps.toString(c))));
+    console.log("Matrix B =", B.data.map(row => row.map(c => ComplexOps.toString(c))));
+
+    console.log("A + B =", ComplexMatrix.add(A, B).data.map(row => row.map(c => ComplexOps.toString(c))));
+    console.log("A * B =", ComplexMatrix.mul(A, B).data.map(row => row.map(c => ComplexOps.toString(c))));
+    console.log("Hermitian transpose of A =", ComplexMatrix.hermitianTranspose(A).data.map(row => row.map(c => ComplexOps.toString(c))));
+};
+
+const testQuantumExample = (): void => {
+    console.log("\n=== Test Quantum Mechanics Example ===");
+
+    const alpha = ComplexOps.create(1 / Math.sqrt(2), 0);
+    const beta = ComplexOps.create(0, 1 / Math.sqrt(2));
+    const qubit = ComplexVector.create([alpha, beta]);
+
+    console.log("Qubit state =", qubit.data.map(c => ComplexOps.toString(c)));
+
+    const normSquared = ComplexOps.add(
+        ComplexOps.mul(ComplexOps.conj(alpha), alpha),
+        ComplexOps.mul(ComplexOps.conj(beta), beta)
+    );
+
+    console.log("|α|² + |β|² =", ComplexOps.toString(normSquared));
+};
+
+testComplexNumbers();
+testComplexVectors();
+testComplexMatrices();
+testQuantumExample();
 };

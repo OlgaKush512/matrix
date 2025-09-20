@@ -183,5 +183,28 @@ export const ex13 = (): void => {
     console.log(`Rank (pivot method) = ${rank6Alt}`);
     // Expected: 1
     
+  const testMatrices: number[][][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[2, 0], [0, 2]],
+        [[1, 1], [1, 1]],
+        [[0, 1], [1, 0]],
+        [[1, 2], [3, 4]],
+        [[-7, 5], [4, 6]],
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+    ];
+
+    testMatrices.forEach((matrixData, index) => {
+        const mat = new Matrix(matrixData);
+        const r1 = rank(mat);
+        const r2 = rankByPivots(mat);
+
+        console.log(`\nTest ${index + 1}: Matrix =`);
+        mat.print();
+        console.log(`rank() = ${r1}`);
+        console.log(`rankByPivots() = ${r2}`);
+    });
+
+
     console.log('✓ Exercise 13 completed successfully');
 };

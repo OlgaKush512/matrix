@@ -140,5 +140,32 @@ export const ex14 = (): void => {
     console.log(`Expected Y scale: ${expectedYScale}`);
     console.log(`Actual Y scale: ${proj.data[1][1]}`);
     
+
+  console.log('\n=== Test Projection Matrices ===');
+
+    const fovs = [100, 70, 40]; // degrees
+    const ratios = [1, 16/9, 4/3];
+    const nearFarPairs = [
+        [0.1, 100],
+        [0.5, 50],
+        [1, 200]
+    ];
+
+    fovs.forEach((fovDeg, i) => {
+        const fovRad = (fovDeg * Math.PI) / 180; // convert to radians
+
+        ratios.forEach((ratio) => {
+            nearFarPairs.forEach(([near, far]) => {
+                console.log(`\n--- Test ${i+1} ---`);
+                console.log(`FoV: ${fovDeg}° (${fovRad.toFixed(4)} rad), Ratio: ${ratio}, Near: ${near}, Far: ${far}`);
+                
+                const projMat = projection(fovRad, ratio, near, far);
+                console.log('Projection matrix:');
+                projMat.print();
+            });
+        });
+    });
+
+
     console.log('✓ Exercise 14 completed successfully');
 };
