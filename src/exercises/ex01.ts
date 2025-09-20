@@ -89,6 +89,25 @@ export const ex01 = (): void => {
             console.log('✓ Correctly caught error:', error);
         }
     }
+
+    console.log('\n--- Basic Tests ---');
+    const basicTests: [number[][], number[]][] = [
+        [[[-42., 42.]], [-1.]],
+        [[[-42.], [-42.], [-42.]], [-1., 1., 0.]],
+        [[[-42., 42.], [1., 3.], [10., 20.]], [1., -10., -1.]],
+        [[[-42., 100., -69.5], [1., 3., 5.]], [1., -10.]]
+    ];
+
+    basicTests.forEach(([vecs, coefs], idx) => {
+        const vectors = vecs.map(v => new Vector(v));
+        const result = linearCombination(vectors, coefs);
+        console.log(`Basic Test ${idx+1}:`);
+        vectors.forEach((vec, i) => {
+            console.log(`v${i+1}:`); vec.print();
+        });
+        console.log(`coefs: [${coefs}]`);
+        console.log('result:'); result.print();
+    });
     
     console.log('✓ Exercise 01 completed successfully');
-};  
+};

@@ -116,6 +116,26 @@ export const ex05 = (): void => {
             console.log('✓ Correctly caught zero vector error:', error);
         }
     }
+
+     const tests: [number[], number[]][] = [
+        [[1, 0], [0, 1]],           
+        [[8, 7], [3, 2]],           
+        [[1, 1], [1, 1]],           
+        [[4, 2], [1, 1]],           
+        [[-7, 3], [6, 4]],          
+    ];
+
+    for (const [uArr, vArr] of tests) {
+        const u = new Vector(uArr);
+        const v = new Vector(vArr);
+
+        const result1 = angleCos(u, v);
+        const result2 = angleCos(v, u); 
+
+        console.log(`angle_cos(${JSON.stringify(uArr)}, ${JSON.stringify(vArr)}) = ${result1}`);
+        console.log(`angle_cos(${JSON.stringify(vArr)}, ${JSON.stringify(uArr)}) = ${result2}`);
+    }
+
     
     console.log('✓ Exercise 05 completed successfully');
 };

@@ -135,6 +135,27 @@ export const ex06 = (): void => {
             console.log('✓ Correctly caught error:', error);
         }
     }
+
+
+    const testCases: [number[], number[]][] = [
+        [[0, 0, 0], [0, 0, 0]],
+        [[1, 0, 0], [0, 0, 0]],
+        [[1, 0, 0], [0, 1, 0]],
+        [[8, 7, -4], [3, 2, 1]],
+        [[1, 1, 1], [0, 0, 0]],
+        [[1, 1, 1], [1, 1, 1]],
+    ];
+
+    for (const [uArr, vArr] of testCases) {
+        const u = new Vector(uArr);
+        const v = new Vector(vArr);
+        const result = crossProduct(u, v);
+
+        console.log('u:'); u.print();
+        console.log('v:'); v.print();
+        console.log('crossProduct(u, v):'); result.print();
+        console.log('-------------------------');
+    }
     
     console.log('✓ Exercise 06 completed successfully');
 };

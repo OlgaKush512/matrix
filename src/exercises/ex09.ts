@@ -135,6 +135,24 @@ export const ex09 = (): void => {
     console.log('Double transpose equals original:', 
         originalMatrix.data.every((row, i) => row.every((val, j) => val === twiceTransposed.data[i][j]))
     );
+
+
+
+     const testMatrices: number[][][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[1, 2], [3, 4]],
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+        [[1, 2], [3, 4], [5, 6]]
+    ];
+
+    for (const arr of testMatrices) {
+        const matrix = new Matrix(arr);
+        console.log('Original matrix:'); matrix.print();
+        const transposed = transpose(matrix);
+        console.log('Transposed matrix:'); transposed.print();
+        console.log('-------------------------');
+    }
     
     console.log('✓ Exercise 09 completed successfully');
 };

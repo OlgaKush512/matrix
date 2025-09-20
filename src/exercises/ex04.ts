@@ -52,7 +52,6 @@ export const normInf = <K = Scalar>(v: Vector<K>): number => {
     return maxAbs;
 };
 
-// Test function for exercise 04
 export const ex04 = (): void => {
     console.log('\n=== Exercise 04 - Vector Norms ===');
     
@@ -90,7 +89,6 @@ export const ex04 = (): void => {
     console.log(`1-norm: ${norm1(mixedVec)}`);
     console.log(`2-norm: ${norm2(mixedVec).toFixed(8)}`);
     console.log(`∞-norm: ${normInf(mixedVec)}`);
-    // 1-norm: 14 (5+3+2+4), 2-norm: √(25+9+4+16)=√54≈7.34846923, ∞-norm: 5
     
     // Test case 5: Single element vector
     console.log('\n--- Test 5: Single element vector ---');
@@ -108,7 +106,36 @@ export const ex04 = (): void => {
     console.log(`1-norm: ${norm1(largeVec)}`);
     console.log(`2-norm: ${norm2(largeVec).toFixed(2)}`);
     console.log(`∞-norm: ${normInf(largeVec)}`);
-    // 1-norm: 4500, 2-norm: √(1M+4M+2.25M)=√7.25M≈2692.58, ∞-norm: 2000
     
+
+
+ console.log('\n--- Euclidean norm (2-norm) ---');
+    console.log("norm2([0]) =", norm2(new Vector([0])));
+    console.log("norm2([1]) =", norm2(new Vector([1])));
+    console.log("norm2([0, 0]) =", norm2(new Vector([0, 0])));
+    console.log("norm2([1, 0]) =", norm2(new Vector([1, 0])));
+    console.log("norm2([2, 1]) =", norm2(new Vector([2, 1])).toFixed(9)); // 2.236067977
+    console.log("norm2([4, 2]) =", norm2(new Vector([4, 2])).toFixed(9)); // 4.472135955
+    console.log("norm2([-4, -2]) =", norm2(new Vector([-4, -2])).toFixed(9)); // 4.472135955
+
+    console.log('\n--- Manhattan norm (1-norm) ---');
+    console.log("norm1([0]) =", norm1(new Vector([0])));
+    console.log("norm1([1]) =", norm1(new Vector([1])));
+    console.log("norm1([0, 0]) =", norm1(new Vector([0, 0])));
+    console.log("norm1([1, 0]) =", norm1(new Vector([1, 0])));
+    console.log("norm1([2, 1]) =", norm1(new Vector([2, 1]))); // 3
+    console.log("norm1([4, 2]) =", norm1(new Vector([4, 2]))); // 6
+    console.log("norm1([-4, -2]) =", norm1(new Vector([-4, -2]))); // 6
+
+    console.log('\n--- Supremum norm (∞-norm) ---');
+    console.log("normInf([0]) =", normInf(new Vector([0]))); // 0
+    console.log("normInf([1]) =", normInf(new Vector([1]))); // 1
+    console.log("normInf([0, 0]) =", normInf(new Vector([0, 0]))); // 0
+    console.log("normInf([1, 0]) =", normInf(new Vector([1, 0]))); // 1
+    console.log("normInf([2, 1]) =", normInf(new Vector([2, 1]))); // 2
+    console.log("normInf([4, 2]) =", normInf(new Vector([4, 2]))); // 4
+    console.log("normInf([-4, -2]) =", normInf(new Vector([-4, -2]))); // 4
+
+
     console.log('✓ Exercise 04 completed successfully');
 };

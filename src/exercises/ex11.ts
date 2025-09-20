@@ -179,5 +179,25 @@ export const ex11 = (): void => {
         }
     }
 
+
+     const testMatrices: number[][][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[2, 0], [0, 2]],
+        [[1, 1], [1, 1]],
+        [[0, 1], [1, 0]],
+        [[1, 2], [3, 4]],
+        [[-7, 5], [4, 6]],
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]]
+    ];
+
+    for (const arr of testMatrices) {
+        const matrix = new Matrix(arr);
+        console.log('Matrix:'); matrix.print();
+        const det = determinant(matrix);
+        console.log('Determinant =', det);
+        console.log('-------------------------');
+    }
+
     console.log('✓ Exercise 11 completed successfully');
 };

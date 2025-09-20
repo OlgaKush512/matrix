@@ -198,5 +198,26 @@ export const ex07 = (): void => {
         }
     }
     
+
+    const testCasesVec: [number[][], number[]][] = [
+        [[ [0, 0], [0, 0] ], [1, 2]],
+        [[ [1, 0], [0, 1] ], [4, 2]],
+        [[ [1, 1], [1, 1] ], [4, 2]],
+        [[ [2, 0], [0, 2] ], [2, 1]],
+        [[ [0.5, 0], [0, 0.5] ], [4, 2]],
+    ];
+
+    for (const [matrixArr, vectorArr] of testCasesVec) {
+        const matrix = new Matrix(matrixArr);
+        const vector = new Vector(vectorArr);
+        const result = mulVec(matrix, vector);
+
+        console.log('Matrix:'); matrix.print();
+        console.log('Vector:'); vector.print();
+        console.log('Matrix * Vector:'); result.print();
+        console.log('-------------------------');
+    }
+
+
     console.log('✓ Exercise 07 completed successfully');
 };

@@ -62,5 +62,13 @@ export const ex03 = (): void => {
         }
     }
     
+
+    console.log('\n--- Extra tests ---');
+    console.log("dot([0, 0], [0, 0]) =", dot(new Vector([0, 0]), new Vector([0, 0])));       
+    console.log("dot([1, 0], [0, 0]) =", dot(new Vector([1, 0]), new Vector([0, 0])));       
+    console.log("dot([1, 0], [1, 0]) =", dot(new Vector([1, 0]), new Vector([1, 0])));       
+    console.log("dot([1, 0], [0, 1]) =", dot(new Vector([1, 0]), new Vector([0, 1])));       
+    console.log("dot([1, 1], [1, 1]) =", dot(new Vector([1, 1]), new Vector([1, 1])));       
+    console.log("dot([4, 2], [2, 1]) =", dot(new Vector([4, 2]), new Vector([2, 1])));
     console.log('✓ Exercise 03 completed successfully');
 };

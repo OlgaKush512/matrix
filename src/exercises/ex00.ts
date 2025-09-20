@@ -87,8 +87,8 @@ export const matrixScl = <K = Scalar>(u: Matrix<K>, a: K): Matrix<K> => {
 export const ex00 = (): void =>  {
     console.log('=== Testing Vector Operations ===');
     
-    const u = new Vector([2, 3]);
-    const v = new Vector([5, 7]);
+    const u = new Vector([1, 0]);
+    const v = new Vector([0, 1]);
     
     console.log('Vector u:'); u.print();
     console.log('Vector v:'); v.print();
@@ -124,5 +124,110 @@ export const ex00 = (): void =>  {
     
     const scaledMatrix = matrixScl(matU, 2);
     console.log('u * 2:'); scaledMatrix.print();
-};
 
+    // === Extra Tests ===
+    console.log('\n=== Extra Vector Addition Tests ===');
+    const vectorAddTests: [number[], number[]][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[1, 1], [1, 1]],
+        [[21, 21], [21, 21]],
+        [[-21, 21], [21, -21]],
+        [[0,1,2,3,4,5,6,7,8,9], [9,8,7,6,5,4,3,2,1,0]]
+    ];
+    vectorAddTests.forEach(([a, b], idx) => {
+        const va = new Vector(a);
+        const vb = new Vector(b);
+        const result = vectorAdd(va, vb);
+        console.log(`Vector Add Test ${idx+1}:`);
+        console.log('a:'); va.print();
+        console.log('b:'); vb.print();
+        console.log('a + b:'); result.print();
+    });
+
+    console.log('\n=== Extra Matrix Addition Tests ===');
+    const matrixAddTests: [number[][], number[][]][] = [
+        [[[0,0],[0,0]], [[0,0],[0,0]]],
+        [[[1,0],[0,1]], [[0,0],[0,0]]],
+        [[[1,1],[1,1]], [[1,1],[1,1]]],
+        [[[21,21],[21,21]], [[21,21],[21,21]]]
+    ];
+    matrixAddTests.forEach(([a, b], idx) => {
+        const ma = new Matrix(a);
+        const mb = new Matrix(b);
+        const result = matrixAdd(ma, mb);
+        console.log(`Matrix Add Test ${idx+1}:`);
+        console.log('a:'); ma.print();
+        console.log('b:'); mb.print();
+        console.log('a + b:'); result.print();
+    });
+
+    console.log('\n=== Extra Vector Subtraction Tests ===');
+    const vectorSubTests: [number[], number[]][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[1, 1], [1, 1]],
+        [[21, 21], [21, 21]],
+        [[-21, 21], [21, -21]],
+        [[0,1,2,3,4,5,6,7,8,9], [9,8,7,6,5,4,3,2,1,0]]
+    ];
+    vectorSubTests.forEach(([a, b], idx) => {
+        const va = new Vector(a);
+        const vb = new Vector(b);
+        const result = vectorSub(va, vb);
+        console.log(`Vector Sub Test ${idx+1}:`);
+        console.log('a:'); va.print();
+        console.log('b:'); vb.print();
+        console.log('a - b:'); result.print();
+    });
+
+    console.log('\n=== Extra Matrix Subtraction Tests ===');
+    const matrixSubTests: [number[][], number[][]][] = [
+        [[[0,0],[0,0]], [[0,0],[0,0]]],
+        [[[1,0],[0,1]], [[0,0],[0,0]]],
+        [[[1,1],[1,1]], [[1,1],[1,1]]],
+        [[[21,21],[21,21]], [[21,21],[21,21]]]
+    ];
+    matrixSubTests.forEach(([a, b], idx) => {
+        const ma = new Matrix(a);
+        const mb = new Matrix(b);
+        const result = matrixSub(ma, mb);
+        console.log(`Matrix Sub Test ${idx+1}:`);
+        console.log('a:'); ma.print();
+        console.log('b:'); mb.print();
+        console.log('a - b:'); result.print();
+    });
+
+    console.log('\n=== Extra Vector Scaling Tests ===');
+    const vectorSclTests: [number[], number][] = [
+        [[0,0], 1],
+        [[1,0], 1],
+        [[1,1], 2],
+        [[21,21], 2],
+        [[42,42], 0.5]
+    ];
+    vectorSclTests.forEach(([a, k], idx) => {
+        const va = new Vector(a);
+        const result = vectorScl(va, k);
+        console.log(`Vector Scl Test ${idx+1}:`);
+        console.log('a:'); va.print();
+        console.log(`scalar: ${k}`);
+        console.log('a * scalar:'); result.print();
+    });
+
+    console.log('\n=== Extra Matrix Scaling Tests ===');
+    const matrixSclTests: [number[][], number][] = [
+        [[[0,0],[0,0]], 0],
+        [[[1,0],[0,1]], 1],
+        [[[1,2],[3,4]], 2],
+        [[[21,21],[21,21]], 0.5]
+    ];
+    matrixSclTests.forEach(([a, k], idx) => {
+        const ma = new Matrix(a);
+        const result = matrixScl(ma, k);
+        console.log(`Matrix Scl Test ${idx+1}:`);
+        console.log('a:'); ma.print();
+        console.log(`scalar: ${k}`);
+        console.log('a * scalar:'); result.print();
+    });
+};

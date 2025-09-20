@@ -33,7 +33,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); identity.print();
     console.log(`trace = ${trace(identity)}`);
-    // Expected: 2.0
     
     // Test case 2: 3x3 matrix
     console.log('\n--- Test 2: 3x3 matrix ---');
@@ -45,7 +44,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); matrix3x3.print();
     console.log(`trace = ${trace(matrix3x3)}`);
-    // Expected: 9.0 (2 + 3 + 4)
     
     // Test case 3: Another 3x3 matrix with negatives
     console.log('\n--- Test 3: 3x3 matrix with negatives ---');
@@ -57,7 +55,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); matrix3x3Neg.print();
     console.log(`trace = ${trace(matrix3x3Neg)}`);
-    // Expected: -21.0 (-2 + -23 + 4)
     
     // Test case 4: 1x1 matrix
     console.log('\n--- Test 4: 1x1 matrix ---');
@@ -65,7 +62,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); matrix1x1.print();
     console.log(`trace = ${trace(matrix1x1)}`);
-    // Expected: 5.0
     
     // Test case 5: 4x4 matrix
     console.log('\n--- Test 5: 4x4 matrix ---');
@@ -78,7 +74,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); matrix4x4.print();
     console.log(`trace = ${trace(matrix4x4)}`);
-    // Expected: 34.0 (1 + 6 + 11 + 16)
     
     // Test case 6: Error handling - non-square matrix
     console.log('\n--- Test 6: Error handling ---');
@@ -106,7 +101,6 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); zeroMatrix.print();
     console.log(`trace = ${trace(zeroMatrix)}`);
-    // Expected: 0.0
     
     // Test case 8: Diagonal matrix
     console.log('\n--- Test 8: Diagonal matrix ---');
@@ -118,7 +112,23 @@ export const ex08 = (): void => {
     
     console.log('Matrix:'); diagonalMatrix.print();
     console.log(`trace = ${trace(diagonalMatrix)}`);
-    // Expected: 12.0 (3 + 7 + 2)
+
+
+    const testMatrices: number[][][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[1, 2], [3, 4]],
+        [[8, -7], [4, 2]],
+        [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+    ];
+
+    for (const arr of testMatrices) {
+        const matrix = new Matrix(arr);
+        console.log('Matrix:'); matrix.print();
+        console.log('trace =', trace(matrix));
+        console.log('-------------------------');
+    }
+
     
     console.log('✓ Exercise 08 completed successfully');
 };

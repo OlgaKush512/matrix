@@ -105,5 +105,19 @@ export const ex02 = (): void => {
         }
     }
     
+
+    console.log('\n--- Tests from subject ---');
+    console.log("lerp(0., 1., 0.) =", lerp(0., 1., 0.)); 
+    console.log("lerp(0., 1., 1.) =", lerp(0., 1., 1.));        
+    console.log("lerp(0., 42., 0.5) =", lerp(0., 42., 0.5));    
+    console.log("lerp(-42., 42., 0.5) =", lerp(-42., 42., 0.5)); 
+
+    const v1 = new Vector([-42., 42.]);
+    const v2 = new Vector([42., -42.]);
+    const vResult = lerp(v1, v2, 0.5);
+    console.log("lerp(Vector([-42., 42.]), Vector([42., -42.]), 0.5) =");
+console.log(vResult.data.map(x => `[${x.toFixed(1)}]`).join(" "));
+
+
     console.log('✓ Exercise 02 completed successfully');
 };

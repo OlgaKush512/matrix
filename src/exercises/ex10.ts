@@ -150,5 +150,22 @@ export const ex10 = (): void => {
     const ref5 = rowEchelon(zeroMatrix);
     console.log('Row echelon form:'); ref5.print();
     
+
+    const testMatrices: number[][][] = [
+        [[0, 0], [0, 0]],
+        [[1, 0], [0, 1]],
+        [[4, 2], [2, 1]],
+        [[-7, 2], [4, 8]],
+        [[1, 2], [4, 8]]
+    ];
+
+    for (const arr of testMatrices) {
+        const matrix = new Matrix(arr);
+        console.log('Original matrix:'); matrix.print();
+        const ref = rowEchelon(matrix);
+        console.log('Row echelon form:'); ref.print();
+        console.log('-------------------------');
+    }
+
     console.log('✓ Exercise 10 completed successfully');
 };
