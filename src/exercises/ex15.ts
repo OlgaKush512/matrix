@@ -14,8 +14,6 @@ import { Vector } from "../core/Vector";
  * 3. Complex matrices: addition, multiplication, Hermitian transpose (conjugate transpose).
  * 4. Quantum mechanics example: representation of a qubit and normalization check.
  */
-
-
 // Complex number type
 interface Complex {
     re: number;
