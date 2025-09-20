@@ -1,6 +1,24 @@
 import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
+
+/**
+ * Vector norms = measure of vector size in different ways.
+ *
+ * 1-norm (Manhattan): sum of absolute values
+ *   ||v||₁ = |v1| + |v2| + ... + |vn|
+ *
+ * 2-norm (Euclidean): square root of sum of squares
+ *   ||v||₂ = √(v1² + v2² + ... + vn²)
+ *
+ * Infinity-norm (Max): largest absolute value
+ *   ||v||∞ = max(|v1|, |v2|, ..., |vn|)
+ *
+ * Example:
+ *   v = [3, -4] → 1-norm=7, 2-norm=5, ∞-norm=4
+ */
+
+
 /**
  * Computes the 1-norm (Manhattan norm) of a vector
  * @param v Vector

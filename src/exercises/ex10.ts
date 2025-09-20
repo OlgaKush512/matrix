@@ -1,5 +1,18 @@
 import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
+
+
+/**
+ * Row Echelon Form
+ * 
+ * Converts a matrix to row-echelon form using Gaussian elimination.
+ * Each pivot element is the largest absolute value in its column, rows
+ * are swapped if needed, and pivot rows are normalized to 1. All entries
+ * below (or above, for full elimination) the pivot are zeroed. Formula:
+ * R_i → R_i - (a_ij / a_jj) * R_j. Useful for solving linear systems,
+ * computing rank, or finding inverses.
+ */
+
 /**
  * Computes the absolute value of a number without Math.abs
  */

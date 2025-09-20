@@ -1,6 +1,22 @@
 import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 
+
+/**
+ * Matrix Inverse using Gauss-Jordan
+ * 
+ * Computes the inverse of a square matrix by augmenting it with the 
+ * identity matrix [A | I] and performing row operations to transform 
+ * A into the identity. The transformed identity becomes A⁻¹. 
+ * Key steps:
+ * 1. Find pivot in each column and swap rows if needed.
+ * 2. Normalize pivot row to make pivot = 1.
+ * 3. Eliminate other rows in the same column.
+ * Throws an error if the matrix is singular or not square.
+ * Useful for solving linear systems, computing A⁻¹ for Ax=b, and 
+ * verifying properties like A * A⁻¹ = I.
+ */
+
 /**
  * Computes the inverse of a matrix using Gauss-Jordan elimination
  * @param matrix Square matrix

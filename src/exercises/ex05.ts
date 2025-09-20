@@ -3,6 +3,23 @@ import { Vector } from '../core/Vector';
 import { dot } from './ex03';
 import { norm2 } from './ex04';
 
+
+/**
+ * Cosine of the angle between two vectors.
+ *
+ * Formula:
+ *   cos(θ) = (u · v) / (||u||₂ * ||v||₂)
+ *   where · is the dot product, ||·||₂ is the Euclidean norm
+ *
+ * Examples:
+ *   u = [1,0], v = [1,0] → cos(θ) = 1   (same direction)
+ *   u = [1,0], v = [0,1] → cos(θ) = 0   (perpendicular)
+ *   u = [-1,1], v = [1,-1] → cos(θ) = -1 (opposite)
+ *
+ * Vectors must have same size and not be zero vectors.
+ */
+
+
 /**
  * Computes the cosine of the angle between two vectors
  * @param u First vector

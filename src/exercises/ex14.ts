@@ -2,6 +2,28 @@ import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 
 /**
+ * 3D Projection Matrix
+ *
+ * This exercise demonstrates how to construct a perspective projection
+ * matrix for 3D rendering. The matrix maps 3D points in camera space
+ * to normalized device coordinates (NDC) suitable for rendering.
+ *
+ * Key concepts:
+ * 1. Field of View (FOV) controls the "zoom" of the camera.
+ * 2. Aspect ratio ensures objects are not distorted based on screen dimensions.
+ * 3. Near and far planes define the visible depth range.
+ * 4. The perspective divide (-1 in (2,3) position) projects 3D points
+ *    onto the 2D screen with correct perspective foreshortening.
+ *
+ * Additional utilities included:
+ * - identity4x4(): Identity matrix for initializing transforms.
+ * - translationMatrix(x,y,z): Creates a translation matrix for moving the camera or objects.
+ * - rotationMatrix(X,Y,Z): Constructs a rotation matrix from basis vectors, useful for view orientation.
+ */
+
+
+
+/**
  * Computes the projection matrix for 3D rendering
  * @param fov Field of view in radians
  * @param ratio Aspect ratio (width / height)

@@ -1,6 +1,17 @@
 import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 
+
+/**
+ * Matrix Trace
+ * 
+ * Computes the trace of a square matrix: tr(A) = Σ A[i][i], 
+ * i.e., the sum of all diagonal elements of an n×n matrix A.
+ * Only defined for square matrices; throws error otherwise.
+ * Useful in linear algebra for eigenvalues, invariants, and matrix properties.
+ */
+
+
 /**
  * Computes the trace of a square matrix
  * @param matrix Square matrix

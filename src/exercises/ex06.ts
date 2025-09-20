@@ -2,6 +2,22 @@ import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
 /**
+ * Cross product of two 3D vectors.
+ *
+ * Formula:
+ *   u × v = (u2*v3 - u3*v2, u3*v1 - u1*v3, u1*v2 - u2*v1)
+ *
+ * Properties:
+ *   - Only defined for 3D vectors
+ *   - u × v = -(v × u) (anticommutativity)
+ *   - Result is orthogonal to both u and v
+ *
+ * Examples:
+ *   z-axis × x-axis = y-axis
+ *   [1,2,3] × [4,5,6] = [-3,6,-3]
+ */
+
+/**
  * Computes the cross product of two 3-dimensional vectors
  * @param u First 3D vector
  * @param v Second 3D vector

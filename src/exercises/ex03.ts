@@ -1,6 +1,19 @@
 import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
+/**
+ * Dot product = multiply two vectors element by element and sum the results.
+ *
+ * Formula:
+ *   u · v = u1*v1 + u2*v2 + ... + un*vn
+ *
+ * Examples:
+ *   [1,2] · [3,4] = 1*3 + 2*4 = 11
+ *   [1,0] · [0,1] = 0  (vectors are perpendicular)
+ *
+ * Vectors must have the same length.
+ */
+
 export const dot = <K = Scalar>(u: Vector<K>, v: Vector<K>): K => {
     if (u.size !== v.size) {
         throw new Error('Vectors must have the same dimension for dot product');

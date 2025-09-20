@@ -2,6 +2,17 @@ import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 
 /**
+ * Matrix Transpose
+ * 
+ * Computes the transpose of a matrix: Aᵀ, where rows become columns 
+ * and columns become rows. For an m×n matrix A, the transpose is n×m.
+ * Formula: (Aᵀ)[i][j] = A[j][i]. Useful in linear algebra for solving 
+ * systems, symmetric matrices, and changing perspectives between rows 
+ * and columns.
+ */
+
+
+/**
  * Computes the transpose of a matrix
  * @param matrix Input matrix
  * @returns Transposed matrix

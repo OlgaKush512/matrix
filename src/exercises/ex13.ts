@@ -3,6 +3,21 @@ import { Scalar } from "../core/types";
 import { rowEchelon } from './ex10';
 
 /**
+ * Matrix Rank
+ * 
+ * Computes the rank of a matrix by reducing it to row echelon form
+ * and counting the number of non-zero rows. The rank represents 
+ * the dimension of the vector space spanned by the rows (or columns) 
+ * of the matrix.
+ * 
+ * Two methods are provided:
+ * 1. `rank`: Uses row echelon form and counts non-zero rows.
+ * 2. `rankByPivots`: Performs Gaussian elimination with pivoting 
+ *    and counts the number of pivot elements (non-zero leading entries).
+ */
+
+
+/**
  * Computes the rank of a matrix by counting non-zero rows in row echelon form
  * @param matrix Input matrix
  * @returns Rank of the matrix

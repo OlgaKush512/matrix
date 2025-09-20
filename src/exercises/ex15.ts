@@ -2,6 +2,20 @@ import { Matrix } from "../core/Matrix";
 import { Vector } from "../core/Vector";
 
 
+/**
+ * Complex Vector Spaces and Matrices
+ *
+ * This exercise introduces operations on complex numbers, vectors, and matrices,
+ * which are fundamental in quantum mechanics, signal processing, and other fields.
+ *
+ * Key concepts:
+ * 1. Complex numbers: addition, subtraction, multiplication, division, conjugate, modulus.
+ * 2. Complex vectors: element-wise operations, scaling, dot product using conjugate, norm.
+ * 3. Complex matrices: addition, multiplication, Hermitian transpose (conjugate transpose).
+ * 4. Quantum mechanics example: representation of a qubit and normalization check.
+ */
+
+
 // Complex number type
 interface Complex {
     re: number;

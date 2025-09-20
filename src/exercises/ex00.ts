@@ -2,6 +2,23 @@ import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
+
+
+/**
+ * Basic linear algebra operations.
+ *
+ * Vectors:
+ *  u = (u1, u2, ..., un), v = (v1, v2, ..., vn)
+ *  u + v = (u1+v1, u2+v2, ..., un+vn)
+ *  u - v = (u1-v1, u2-v2, ..., un-vn)
+ *  a·u   = (a·u1, a·u2, ..., a·un)
+ *
+ * Matrices:
+ *  U = [uᵢⱼ], V = [vᵢⱼ]
+ *  U + V = [uᵢⱼ+vᵢⱼ],  U - V = [uᵢⱼ-vᵢⱼ],  a·U = [a·uᵢⱼ]
+ */
+
+
 export const vectorAdd = <K = Scalar>(u: Vector<K>, v: Vector<K>): Vector<K> => {
     if (u.size !== v.size) {
         throw new Error('Vectors must have the same size for addition');

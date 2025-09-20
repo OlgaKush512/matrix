@@ -1,5 +1,18 @@
 import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
+
+/**
+ * Determinant of a Square Matrix
+ * 
+ * Computes the determinant using Gaussian elimination or recursive
+ * Laplace expansion. Gaussian method transforms the matrix to upper
+ * triangular form and multiplies pivot elements (swapping rows changes
+ * the sign). Recursive method expands along the first row:
+ * det(A) = Σ (-1)^j * a_0j * det(minor(0,j)). Useful for solving
+ * linear systems, computing inverses, and checking singularity.
+ */
+
+
 /**
  * Computes the determinant of a square matrix using Gaussian elimination
  * @param matrix Square matrix

@@ -3,6 +3,14 @@ import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
 /**
+ * Matrix and Vector Multiplication
+ * 
+ * Multiplies a matrix by a vector: y = A * x, where A is m×n and x is n×1, result y is m×1.
+ * Multiplies two matrices: C = A * B, where A is m×n, B is n×p, result C is m×p.
+ * Checks that dimensions match; throws error if incompatible.
+ */
+
+/**
  * Multiplies a matrix by a vector
  * @param matrix Matrix (m x n)
  * @param vector Vector (n)

@@ -2,6 +2,20 @@ import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
 
+/**
+ * Linear combination = take some vectors and multiply them by numbers,
+ * then add the results together.
+ *
+ * Formula:
+ *   Result = a1·v1 + a2·v2 + ... + ak·vk
+ *
+ * Example:
+ *   v1 = (1,0), v2 = (0,1)
+ *   2·v1 + 3·v2 = (2,3)
+ *
+ * All vectors must be the same length.
+ */
+
 export const linearCombination = <K = Scalar>(
     vectors: Vector<K>[],
     coefs: K[]

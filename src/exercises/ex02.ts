@@ -2,6 +2,18 @@ import { Matrix } from "../core/Matrix";
 import { Scalar } from "../core/types";
 import { Vector } from "../core/Vector";
 
+/**
+ * Lerp = take two values and find a point between them.
+ *
+ * Formula:
+ *   result = u + t · (v - u), where t is between 0 and 1
+ *
+ * Examples:
+ *   Numbers: between 0 and 10 at t=0.5 → 5
+ *   Vectors: between (2,1) and (4,2) at t=0.5 → (3,1.5)
+ *   Matrices: take the average of each element
+ */
+
 export const lerp = <T extends Scalar | Vector<Scalar> | Matrix<Scalar>>(
     u: T,
     v: T,
